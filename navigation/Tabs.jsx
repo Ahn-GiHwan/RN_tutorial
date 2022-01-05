@@ -5,6 +5,8 @@ import Tv from "../screens/Tv";
 import Search from "../screens/Search";
 import { Button, Text } from "react-native";
 import { useColorScheme } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
@@ -45,9 +47,28 @@ const Tabs = () => {
               }}
             />
           ),
+          tabBarIcon: ({ focused, color, size }) => (
+            <FontAwesome
+              name={focused ? "film" : "inbox"}
+              color={color}
+              size={size}
+            />
+          ),
         }}
       />
-      <Tab.Screen name="TV" component={Tv} />
+      <Tab.Screen
+        name="TV"
+        component={Tv}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons
+              name={focused ? "tv-outline" : "tv"}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Search"
         component={Search}
@@ -56,6 +77,13 @@ const Tabs = () => {
           headerStyle: {
             backgroundColor: "red",
           },
+          tabBarIcon: ({ focused, color, size }) => (
+            <FontAwesome
+              name={focused ? "search" : "circle"}
+              color={color}
+              size={size}
+            />
+          ),
         }}
       />
     </Tab.Navigator>
