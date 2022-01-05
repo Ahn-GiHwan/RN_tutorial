@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import AppLoading from "expo-app-loading";
-import { Text, View, Image } from "react-native";
 import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import { Asset, useAssets } from "expo-asset";
+import { useAssets } from "expo-asset";
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./navigation/Tabs";
 
 export default function App() {
   const [assets] = useAssets([require("./bg.jpeg")]);
@@ -12,8 +13,8 @@ export default function App() {
   if (!assets || !loaded) return <AppLoading />;
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Hello RN!!</Text>
-    </View>
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
   );
 }
