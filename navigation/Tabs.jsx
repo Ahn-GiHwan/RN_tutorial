@@ -13,21 +13,21 @@ const Tabs = () => {
 
   return (
     <Tab.Navigator
-      screenOptions={{
-        tabBarLabelStyle: {
-          color: "black",
-        },
-        tabBarActiveTintColor: isDark ? "pink" : "white",
-        tabBarStyle: {
-          backgroundColor: isDark ? "black" : "skyblue",
-        },
-        headerStyle: {
-          backgroundColor: isDark ? "black" : "white",
-        },
-        headerTitleStyle: {
-          color: isDark ? "white" : "black",
-        },
-      }}
+    // screenOptions={{
+    //   tabBarLabelStyle: {
+    //     color: "black",
+    //   },
+    //   tabBarActiveTintColor: isDark ? "pink" : "white",
+    //   tabBarStyle: {
+    //     backgroundColor: isDark ? "black" : "skyblue",
+    //   },
+    //   headerStyle: {
+    //     backgroundColor: isDark ? "black" : "white",
+    //   },
+    //   headerTitleStyle: {
+    //     color: isDark ? "white" : "black",
+    //   },
+    // }}
     >
       <Tab.Screen
         name="Movies"
