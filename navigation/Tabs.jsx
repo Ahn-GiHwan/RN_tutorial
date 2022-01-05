@@ -4,19 +4,28 @@ import Movies from "../screens/Movies";
 import Tv from "../screens/Tv";
 import Search from "../screens/Search";
 import { Button, Text } from "react-native";
+import { useColorScheme } from "react-native";
 
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+  const isDark = useColorScheme() === "dark";
+
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarLabelStyle: {
           color: "black",
         },
-        tabBarActiveTintColor: "pink",
+        tabBarActiveTintColor: isDark ? "pink" : "white",
         tabBarStyle: {
-          backgroundColor: "skyblue",
+          backgroundColor: isDark ? "black" : "skyblue",
+        },
+        headerStyle: {
+          backgroundColor: isDark ? "black" : "white",
+        },
+        headerTitleStyle: {
+          color: isDark ? "white" : "black",
         },
       }}
     >
