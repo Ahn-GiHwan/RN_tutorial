@@ -11,6 +11,7 @@ import {
 import Tabs from "./navigation/Tabs";
 import { useColorScheme } from "react-native";
 import Stack from "./navigation/Stack";
+import Root from "./navigation/Root";
 
 export default function App() {
   const [assets] = useAssets([require("./bg.jpeg")]);
@@ -22,8 +23,9 @@ export default function App() {
 
   return (
     <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
+      <Root />
       {/* <Tabs /> */}
-      <Stack />
+      {/* <Stack /> */}
     </NavigationContainer>
   );
 }
