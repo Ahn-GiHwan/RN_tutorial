@@ -19,7 +19,7 @@ const Title = styled.Text`
 const Movies = ({ navigation: { navigate } }) => {
   return (
     <Btn onPress={() => navigate("Stack", { screen: "Three" })}>
-      <Title>Movie</Title>
+      <Title>Movie!</Title>
     </Btn>
   );
 };
