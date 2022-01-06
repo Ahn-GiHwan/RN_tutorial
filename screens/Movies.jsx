@@ -6,13 +6,14 @@ const Btn = styled.Text`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: ${(props) => props.theme.mainBgColor};
 `;
 
 const Title = styled.Text`
-  color: blue;
+  /* color: blue; */
   font-size: 20px;
   font-weight: 800;
+  color: ${(props) => props.theme.textColor};
 `;
 
 const Movies = ({ navigation: { navigate } }) => {
