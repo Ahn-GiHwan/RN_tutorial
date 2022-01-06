@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Text, TouchableOpacity, View } from "react-native";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const Btn = styled.Text`
+const Btn = styled.TouchableOpacity`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,7 @@ const Title = styled.Text`
   color: ${(props) => props.theme.textColor};
 `;
 
-const Movies = ({ navigation: { navigate } }) => {
+const Movies: React.FC<NativeStackScreenProps<any,"Movies">> = ({ navigation: { navigate } }) => {
   return (
     <Btn onPress={() => navigate("Stack", { screen: "Three" })}>
       <Title>Movie!</Title>
