@@ -13,10 +13,10 @@ const ScreenTwo = () => (
     <Text>Two</Text>
   </View>
 );
-const ScreenThree = ({ navigation: { goBack } }) => (
+const ScreenThree = ({ navigation: { navigate } }) => (
   <View>
     <Text>Three</Text>
-    <Button title="Back" onPress={() => goBack()} />
+    <Button title="Go TV" onPress={() => navigate("Tabs", { screen: "TV" })} />
   </View>
 );
 
