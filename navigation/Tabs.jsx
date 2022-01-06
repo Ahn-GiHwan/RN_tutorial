@@ -7,6 +7,7 @@ import { Button, Text } from "react-native";
 import { useColorScheme } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import Stack from "./Stack";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,21 +16,22 @@ const Tabs = () => {
 
   return (
     <Tab.Navigator
-    // screenOptions={{
-    //   tabBarLabelStyle: {
-    //     color: "black",
-    //   },
-    //   tabBarActiveTintColor: isDark ? "pink" : "white",
-    //   tabBarStyle: {
-    //     backgroundColor: isDark ? "black" : "skyblue",
-    //   },
-    //   headerStyle: {
-    //     backgroundColor: isDark ? "black" : "white",
-    //   },
-    //   headerTitleStyle: {
-    //     color: isDark ? "white" : "black",
-    //   },
-    // }}
+      screenOptions={{
+        // headerShown: false,
+        tabBarLabelStyle: {
+          color: "black",
+        },
+        tabBarActiveTintColor: isDark ? "pink" : "white",
+        tabBarStyle: {
+          backgroundColor: isDark ? "black" : "skyblue",
+        },
+        headerStyle: {
+          backgroundColor: isDark ? "black" : "white",
+        },
+        headerTitleStyle: {
+          color: isDark ? "white" : "black",
+        },
+      }}
     >
       <Tab.Screen
         name="Movies"
@@ -39,14 +41,6 @@ const Tabs = () => {
             color: "red",
           },
           tabBarBadge: 3,
-          headerLeft: () => (
-            <Button
-              title="<"
-              onPress={() => {
-                alert("Go Back!");
-              }}
-            />
-          ),
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome
               name={focused ? "film" : "inbox"}
